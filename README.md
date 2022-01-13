@@ -7,7 +7,5 @@
 - Bootstrap 5
 - JavaScript
 
-[Preview](https://russellimtiaz.github.io/groco-shop/)
-
 ![preview-image](preview.png)
 # groco-shop
