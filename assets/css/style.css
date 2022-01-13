@@ -1,0 +1,405 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+/* Reset Code */
+:root {
+  --orange: #ff7800;
+  --black: #130f40;
+  --white: #fff;
+  --light-color: #666;
+  --light-bg: #eee;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --border: 2px solid rgba(0, 0, 0, 0.1);
+  --outline: 1px solid rgba(0, 0, 0, 0.1);
+  --outline-hover: 2px solid var(--black);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  scroll-padding-top: 70px;
+}
+html::-webkit-scrollbar {
+  width: 10px;
+}
+html::-webkit-scrollbar-track {
+  background: var(--white);
+}
+html::-webkit-scrollbar-thumb {
+  background-color: var(--orange);
+  border-radius: 50px;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  background: var(--light-bg);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--black);
+  font-weight: 600;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+button,
+input {
+  border: none;
+  outline: none;
+}
+.btn {
+  display: inline-block;
+  padding: 5px 25px;
+  font-size: 18px;
+  border: 2px solid var(--black);
+  outline: none;
+  border-radius: 3px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+.btn:hover {
+  color: var(--white);
+}
+.btn::before {
+  content: "";
+  background: var(--orange);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -120%;
+  border-radius: 3px;
+  z-index: -1;
+  transition: all 0.3s;
+}
+.btn:hover.btn::before {
+  left: 0;
+}
+.title {
+  font-size: 35px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.title span {
+  display: inline-block;
+  color: var(--white);
+  padding: 5px 30px;
+  background: var(--orange);
+  clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+/* Header-area CSS */
+.header-area {
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.header-area.active {
+  padding: 10px 0;
+}
+.header-area .logo a {
+  font-size: 25px;
+  color: var(--black);
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.header-area .logo a i {
+  color: var(--orange);
+}
+.nav-item {
+  display: inline-block;
+  margin-left: 5px;
+}
+.nav-link {
+  text-transform: capitalize;
+  color: var(--black);
+  font-size: 20px;
+}
+.nav-link:hover {
+  color: var(--orange);
+}
+.menu-icon div {
+  margin-left: 5px;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: var(--light-bg);
+  cursor: pointer;
+}
+.menu-icon div:hover {
+  color: var(--white);
+  background: var(--orange);
+}
+.fa-bars {
+  display: none;
+}
+/* Home-area CSS */
+.home-area {
+  height: calc(100vh - 80px);
+  background: url(../img/banner-bg.webp) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.home-content {
+  width: 50%;
+  text-align: center;
+}
+.home-content .home-title {
+  font-size: 34px;
+}
+.home-content .home-title span {
+  color: var(--orange);
+}
+.home-content .home-desc {
+  color: var(--light-color);
+  font-size: 20px;
+}
+/* Feature-area CSS */
+.feature-box {
+  text-align: center;
+  background: var(--white);
+  padding: 30px 20px;
+  outline: var(--outline);
+  outline-offset: -10px;
+  box-shadow: var(--box-shadow);
+}
+.feature-box:hover {
+  outline: var(--outline-hover);
+  outline-offset: 0;
+}
+.feature-img img,
+.category-box img {
+  margin-top: 10px;
+  height: 150px;
+}
+.feature-conten,
+.product-content,
+.category-content {
+  margin-top: 15px;
+}
+.feature-content h2,
+.product-content h2,
+.category-content h2,
+.customer-content h2 {
+  font-size: 25px;
+  font-weight: 500;
+}
+.feature-content p,
+.category-content p {
+  color: var(--light-color);
+  font-size: 16px;
+  line-height: 28px;
+}
+/* Product area CSS */
+.product-box,
+.category-box {
+  text-align: center;
+  background: var(--white);
+  padding: 30px 20px;
+  outline: var(--outline);
+  outline-offset: -10px;
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+}
+.product-box:hover,
+.category-box:hover {
+  outline: var(--outline-hover);
+  outline-offset: 0;
+}
+.product-box .image img {
+  margin-top: 10px;
+  height: 200px;
+}
+.product-content p {
+  font-size: 18px;
+  color: var(--light-color);
+  margin-bottom: 5px;
+}
+.product-star {
+  margin-bottom: 15px;
+  color: var(--orange);
+}
+/* Category area CSS */
+.category-content p {
+  color: var(--light-color);
+  font-size: 18px;
+  line-height: 28px;
+}
+/* Customer Review area CSS */
+
+.customer-box {
+  text-align: center;
+  background: var(--white);
+  padding: 30px 20px;
+  outline: var(--outline);
+  outline-offset: -10px;
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+}
+.customer-box:hover {
+  outline: var(--outline-hover);
+  outline-offset: 0;
+}
+.customer-img img {
+  border-radius: 50%;
+  height: 130px;
+  margin-top: 5px;
+}
+.customer-content p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--light-color);
+}
+.customer-star {
+  color: var(--orange);
+}
+/* Blog-area CSS */
+.blog-box {
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+}
+.blog-content {
+  padding: 20px;
+}
+.blog-img {
+  height: 250px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+.blog-img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+.blog-box:hover .blog-img img {
+  transform: scale(1.2);
+}
+.blog-icon {
+  border-bottom: var(--border);
+}
+.blog-icon p {
+  color: var(--light-color);
+  font-size: 15px;
+}
+.blog-icon p i {
+  color: var(--orange);
+  margin-right: 10px;
+}
+.blog-content h2 {
+  font-size: 22px;
+  margin-top: 12px;
+}
+.blog-content p {
+  font-size: 16px;
+  color: var(--light-color);
+}
+/* Footer-area CSS */
+.footer-area {
+  background: var(--white);
+}
+.footer-box .title {
+  font-size: 28px;
+  margin-bottom: 12px;
+  text-align: start;
+}
+.footer-box .title i {
+  color: var(--orange);
+}
+.footer-box p {
+  font-size: 16px;
+  color: var(--light-color);
+}
+.footer-icon a {
+  font-size: 20px;
+  display: inline-block;
+  background: var(--light-bg);
+  border-radius: 5px;
+  margin-right: 3px;
+}
+.footer-icon a:hover {
+  color: var(--white);
+  background: var(--orange);
+}
+.footer-icon a i {
+  color: var(--black);
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+.footer-icon a:hover i {
+  color: var(--white);
+}
+.footer-item {
+  margin-bottom: 10px;
+}
+.footer-item a {
+  font-size: 16px;
+  color: var(--light-color);
+}
+.footer-item a i {
+  vertical-align: middle;
+  color: var(--orange);
+  padding-right: 10px;
+}
+.footer-item:hover a i {
+  padding-right: 25px;
+}
+.footer-box form {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.footer-box form input {
+  color: var(--light-color);
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  background: var(--light-bg);
+  border-radius: 5px;
+}
+.footer-box img {
+  margin-top: 20px;
+}
+.footer-text {
+  border-top: var(--border);
+  padding-top: 30px;
+  text-align: center;
+}
+.footer-text h3 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.footer-text h3 span {
+  color: var(--orange);
+}
